@@ -9,9 +9,9 @@
 
 ### `helm upgrade APISIX`
 
-`customPlugins.luaPath:` `APISIX`集群加载自定义插件路径，这边只需要写`mounts`前缀，因为集群在加载时会默认加`apisix/plugin`目录
-`customPlugins.plugins.attrs:` 加载插件时需要的属性，示例插件不需要默认属性所以临时定义几个属性，因为在`helm apisix 0.9.1`版本中该字段为空`apisix`启动就抛解析`config.yaml`异常
-`customPlugins.plugins.configMap.mounts.path:` 犹如上面提到的该字段值是`luaPath`与默认路径的拼接值，需要挂载到具体文件`/opts/apisix/plugins/custom-header.lua`
+- `customPlugins.luaPath:` `APISIX`集群加载自定义插件路径，这边只需要写`mounts`前缀，因为集群在加载时会默认加`apisix/plugin`目录
+- `customPlugins.plugins.attrs:` 加载插件时需要的属性，示例插件不需要默认属性所以临时定义几个属性，因为在`helm apisix 0.9.1`版本中该字段为空`apisix`启动就抛解析`config.yaml`异常
+- `customPlugins.plugins.configMap.mounts.path:` 犹如上面提到的该字段值是`luaPath`与默认路径的拼接值，需要挂载到具体文件`/opts/apisix/plugins/custom-header.lua`
 
 ```=yaml
 customPlugins:
